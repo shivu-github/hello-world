@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "shivu-servian"
-    key    = "terraform.tfstate"
+    key    = "shivu"
     region = "us-east-2"
   }
 }
