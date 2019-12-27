@@ -17,19 +17,19 @@ provider "aws" {
 }
 
 # Create EC2 instance
-resource "aws_instance" "shivu-servian" {
+resource "aws_instance" "shivuec2" {
   subnet_id              = "${var.subnet_id}"   
   ami                    = "${var.ami}"
   #count                  = "${var.count}"
-  key_name               = "${var.key_name}"
-  vpc_security_group_ids = ["${aws_security_group.default.id}"]
+  #key_name               = "${var.key_name}"
+  vpc_security_group_ids = ["${aws_security_group.shivusg.id}"]
   source_dest_check      = false
   instance_type          = "${var.instance_type}"
 
 }
 
 # Create Security Group for EC2
-resource "aws_security_group" "default" {
+resource "aws_security_group" "shivusg" {
   name = "shivu-servian-sg"
 
   ingress {
