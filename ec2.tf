@@ -3,8 +3,6 @@ terraform {
     bucket = "shivu-servian"
     key    = "shivu"
     region = "us-east-2"
-    AWS_ACCESS_KEY_ID = "AKIAQSPKRYWRWHNG7ER6"
-    AWS_SECRET_ACCESS_KEY = "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"
   }
 }
 
