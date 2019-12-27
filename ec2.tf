@@ -17,7 +17,7 @@ provider "aws" {
 }
 
 # Create EC2 instance
-resource "aws_instance" "default" {
+resource "aws_instance" "shivu-servian" {
   subnet_id              = "${var.subnet_id}"   
   ami                    = "${var.ami}"
   #count                  = "${var.count}"
@@ -26,9 +26,6 @@ resource "aws_instance" "default" {
   source_dest_check      = false
   instance_type          = "${var.instance_type}"
 
-  tags {
-    Name = "shivu-servian"
-  }
 }
 
 # Create Security Group for EC2
