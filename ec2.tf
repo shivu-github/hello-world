@@ -19,7 +19,7 @@ provider "aws" {
 resource "aws_instance" "default" {
   subnet_id              = "${var.subnet_id}"   
   ami                    = "${var.ami}"
-  count                  = "${var.count}"
+  #count                  = "${var.count}"
   key_name               = "${var.key_name}"
   vpc_security_group_ids = ["${aws_security_group.default.id}"]
   source_dest_check      = false
