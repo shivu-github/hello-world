@@ -3,14 +3,16 @@ terraform {
     bucket = "shivu-servian"
     key    = "shivu"
     region = "us-east-2"
+    AWS_ACCESS_KEY_ID = "AKIAQSPKRYWRWHNG7ER6"
+    AWS_SECRET_ACCESS_KEY = "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"
   }
 }
 
 # Use AWS Terraform provider
 provider "aws" {
   region = "us-east-2"
-  Access_key_ID = "AKIAQSPKRYWRWHNG7ER6"
-  Secret_access_key = "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"
+  AWS_ACCESS_KEY_ID = "AKIAQSPKRYWRWHNG7ER6"
+  AWS_SECRET_ACCESS_KEY = "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"
 }
 
 # Create EC2 instance
