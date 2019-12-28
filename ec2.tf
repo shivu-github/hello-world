@@ -3,16 +3,16 @@ terraform {
     bucket = "shivu-servian"
     key    = "shivu"
     region = "us-east-2"
-    access_key = "AKIAQSPKRYWRWHNG7ER6"
-    secret_key = "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"
+    access_key = "AKIAQSPKRYWR54HSMOV7"
+    secret_key = "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"
   }
 }
 
 # Use AWS Terraform provider
 provider "aws" {
   region = "us-east-2"
-  access_key = "AKIAQSPKRYWRWHNG7ER6"
-  secret_key = "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"
+  access_key = "AKIAQSPKRYWR54HSMOV7"
+  secret_key = "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"
 
 }
 
