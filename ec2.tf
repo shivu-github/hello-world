@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "shivu-servian"
+    bucket = "shivu-new"
     key    = "shivu"
     region = "us-east-2"
     access_key = "AKIAQSPKRYWR54HSMOV7"
