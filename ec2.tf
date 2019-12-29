@@ -1,3 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket = "shivu-ec2"
+    key    = "shivu-servian"
+    region = "us-east-2"
+    access_key = "AKIAUY5V4M2ZIFFVNTMC"
+    secret_key = "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"
+  }
+}
+
 provider "aws" {
   region = "us-east-2"
   access_key = "AKIAUY5V4M2ZIFFVNTMC"
