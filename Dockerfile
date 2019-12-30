@@ -1,6 +1,4 @@
-# Pull base image 
-From tomcat:8-jre8 
-
-# Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps
+FROM python:3.4-alpine
+ADD . /shivu
+WORKDIR /shivu
+CMD ["python","app.py"]
