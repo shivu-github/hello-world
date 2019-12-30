@@ -1,3 +1,3 @@
 output "instance_ips" {
-  value = ["${aws_instance.shivuec2.*.public_ip}"]
+  value = ["${aws_instance.servian-ec25.*.public_ip}"]
 }
