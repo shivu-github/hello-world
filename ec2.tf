@@ -1,5 +1,4 @@
 provider "aws" {
-  region = "us-east-2"
 }
 
 # Create EC2 instance
