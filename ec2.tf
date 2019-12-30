@@ -1,27 +1,29 @@
-terraform {
-  backend "s3" {
-    bucket = "shivu-ec2"
-    key    = "shivu-servian"
-    region = "us-east-2"
-    access_key = "AKIAUY5V4M2ZIFFVNTMC"
-    secret_key = "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"
-  }
-}
-
 provider "aws" {
   region = "us-east-2"
-  access_key = "AKIAUY5V4M2ZIFFVNTMC"
-  secret_key = "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"
+  access_key = "AKIAUY5V4M2ZHMTSUUJZ"
+  secret_key = "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"
 }
 
 # Create EC2 instance
-resource "aws_instance" "newawsec2" {
+resource "aws_instance" "servian-ec25" {
   ami                    = "ami-0dacb0c129b49f529"
   instance_type          = "t2.micro"
+  key_name               = "shivu-key"
+  vpc_security_group_ids = ["${aws_security_group.servian-sg5.id}"]
+  user_data = <<EOF
+                #!/bin/bash
+                sudo yum update -y
+                sudo yum install docker -y
+                sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+                sudo chmod +x /usr/local/bin/docker-compose
+  EOF
+  tags = {
+          Name = "servian-ec25"
+         }
 }
 
-resource "aws_security_group" "shivusg" {
-  name = "shivusg"
+resource "aws_security_group" "servian-sg5" {
+  name = "servian-sg5"
 
   ingress {
     from_port   = 80
@@ -37,4 +39,20 @@ resource "aws_security_group" "shivusg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 }
+
+
