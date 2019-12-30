@@ -7,3 +7,4 @@ terraform {
     secret_key = "${AWS_SECRET_KEY}"
   
 }
+  }
