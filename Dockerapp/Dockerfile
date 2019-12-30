@@ -1,5 +1,5 @@
-FROM python:3.4-alpine
+FROM python:2.7
 ADD . /home/shivu
 WORKDIR /home/shivu
-pip install -r requirements.txt
-CMD ["python","app.py"]
+RUN pip install -r requirements.txt
+CMD python app.py
