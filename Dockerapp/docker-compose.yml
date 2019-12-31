@@ -1,8 +1,8 @@
+version: '2'
 services:
-  database:
-    image: redis
-  web:
-    image: nginx
+  myapp:
+    build: .
     ports:
-    - 9090:80/tcp
-version: '3.0' 
+     - "80:5000"
+  redis-lb:
+    image: "redis:alpine"
