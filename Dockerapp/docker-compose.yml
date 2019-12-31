@@ -1,7 +1,7 @@
 version: '2'
 services:
   myapp:
-    build: .
+    build: /shivu
     ports:
      - "80:5000"
   redis-lb:
