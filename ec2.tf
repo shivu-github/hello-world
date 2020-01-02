@@ -2,7 +2,7 @@ provider "aws" {
 }
 
 # Create EC2 instance
-resource "aws_instance" "servian-ec25" {
+resource "aws_instance" "servian-ec35" {
   ami                    = "ami-0dacb0c129b49f529"
   instance_type          = "t2.micro"
   key_name               = "shivu-key"
@@ -10,12 +10,13 @@ resource "aws_instance" "servian-ec25" {
   user_data = <<EOF
                 #!/bin/bash
                 sudo yum update -y
-                sudo yum install docker -y
+                sudo yum install docker -y 
+                sudo service docker start
                 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
                 sudo chmod +x /usr/local/bin/docker-compose
   EOF
   tags = {
-          Name = "servian-ec25"
+          Name = "servian-ec35"
          }
 }
 
